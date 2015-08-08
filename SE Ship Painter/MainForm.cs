@@ -73,7 +73,7 @@ namespace SE_Ship_Painter
         private void btnLoadBlueprint_Click(object sender, EventArgs e) {
             var file = new OpenFileDialog();
             file.Filter = "SE Blueprint (.sbc)|*.sbc";
-            file.InitialDirectory = "%appdata%/SpaceEngineers/Blueprints";
+            file.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
             if (file.ShowDialog() == DialogResult.OK) {
                 blueprintFilename = file.FileName;
